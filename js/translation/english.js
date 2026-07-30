@@ -116,6 +116,8 @@ const translationsEnUs = {
     "view-project": "View Project",
     "coming-soon": "Coming Soon",
     "other-projects-text": "My other projects/studies",
+    "filter-all": "All",
+    "projects-empty": "No projects found for this technology.",
 
     // Certifications Section
     "certifications-title": "My Certifications",

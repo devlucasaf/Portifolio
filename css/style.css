@@ -665,6 +665,12 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, var(--preto-puro) 0%, var(--roxo-escuro) 100%);
+    transition: all 0.8s ease;
+}
+
+.hero.visible {
+    opacity: 1;
+    transform: translateY(0.8rem);
 }
 
 .hero::before {
@@ -1253,13 +1259,21 @@ body {
 }
 
 .project-card {
-    background: linear-gradient(145deg, var(--preto-fumaca), var(--preto-carvão));
+    background: linear-gradient(
+        145deg,
+        var(--preto-fumaca),
+        var(--preto-carvão)
+    );
     border-radius: var(--border-radius-xl);
     padding: 2.5rem;
     border: 2px solid var(--roxo-escuro);
-    transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
 }
 
 .project-card:hover {
@@ -1360,6 +1374,79 @@ body {
     opacity: 0.6;
     cursor: not-allowed;
     color: var(--roxo-suave);
+}
+
+/* --- ANIMAÇÕES DE HOVER NOS CARDS --- */
+.skill-card::after,
+.tool-card::after,
+.project-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(157, 78, 221, 0.25),
+        transparent
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.skill-card:hover::after,
+.tool-card:hover::after,
+.project-card:hover::after {
+    animation: brilhoCard 0.85s ease;
+}
+
+@keyframes brilhoCard {
+    100% {
+        left: 125%;
+    }
+}
+
+.skill-icon,
+.tool-icon,
+.project-icon {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1) rotate(-8deg);
+}
+
+.skill-card:hover .skill-icon img {
+    filter: drop-shadow(0 0 12px var(--roxo-neon));
+}
+
+.tool-card:hover .tool-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.tool-card:hover .tool-icon img {
+    filter: brightness(1.6);
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.12) rotate(8deg);
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.9);
+}
+
+.project-card:hover .project-title {
+    text-shadow: 0 0 12px rgba(157, 78, 221, 0.6);
+}
+
+.tech-tag {
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.project-card:hover .tech-tag {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(157, 78, 221, 0.4);
 }
 
 .other-projects-section {
@@ -1910,7 +1997,6 @@ body {
 .loaded .code-animation,
 .loaded .section-title,
 .loaded .skill-card,
-.loaded .project-card,
 .loaded .stat {
     animation: fadeIn 1s ease forwards;
 }
@@ -2074,7 +2160,7 @@ body {
     border-radius: var(--border-radius-lg);
     padding: 2rem;
     border: 2px solid var(--roxo-escuro);
-    transition: all var(--transition-normal);
+    transition: 0.5s;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -2092,7 +2178,7 @@ body {
 }
 
 .playlist-card:hover {
-    transform: translateY(-15px);
+    transform: translateY(-15px) scale(1.02);
     border-color: var(--roxo-neon);
     box-shadow: 0 0 30px rgba(157, 78, 221, 0.4);
 }
@@ -2258,4 +2344,169 @@ body {
 
 .language-dropdown {
     z-index: 9999 !important;
+}
+
+/* ---  ANIMAÇÕES DE ENTRADA AO SCROLL --- */
+.reveal {
+    opacity: 0;
+    translate: 0 40px;
+    transition: opacity 0.7s ease, translate 0.7s ease;
+    will-change: opacity, translate;
+}
+
+.reveal.visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+/* ---  BOTÃO VOLTAR AO TOPO  --- */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--gradiente-roxo);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow);
+    z-index: 900;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-neon);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--roxo-suave);
+    outline-offset: 3px;
+}
+
+/* ---  FILTRO DA SEÇÃO DE PROJETOS  --- */
+.projects-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--border-color);
+    padding: 0.6rem 1.4rem;
+    border-radius: 25px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+    border-color: var(--roxo-neon);
+    color: var(--roxo-neon);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--gradiente-roxo);
+    color: white;
+    border-color: var(--roxo-neon);
+    box-shadow: var(--shadow-neon);
+}
+
+.filter-btn:focus-visible {
+    outline: 2px solid var(--roxo-suave);
+    outline-offset: 2px;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.projects-empty {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin: 2rem 0;
+}
+
+/* ---  RESPONSIVIDADE DOS NOVOS ELEMENTOS  --- */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 1.2rem;
+        right: 1.2rem;
+        width: 44px;
+        height: 44px;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1.1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ---  RESPEITA REDUÇÃO DE MOVIMENTO  --- */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
+
+    .back-to-top,
+    .filter-btn {
+        transition: none;
+    }
+
+    .skill-card:hover::after,
+    .tool-card:hover::after,
+    .project-card:hover::after {
+        animation: none;
+    }
+
+    .project-card.filter-enter {
+        animation: none;
+    }
+}
+
+.project-card.filter-enter {
+    animation: aparecerProjeto 0.6s ease both;
+}
+
+@keyframes aparecerProjeto {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.project-card.hidden {
+    display: none;
 }

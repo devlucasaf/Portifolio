@@ -80,7 +80,7 @@
         </header>
         
         <main>
-            <section id="home-section" class="hero">
+            <section id="home-section" class="hero reveal">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1 class="hero-title" data-key="welcome">
@@ -113,7 +113,7 @@
                 </div>
             </section>
             
-            <section id="about-section" class="section about">
+            <section id="about-section" class="section about reveal">
                 <div class="container">
                     <h2 class="section-title" data-key="about-title">Sobre <span class="highlight">Mim</span></h2>
                     
@@ -189,7 +189,7 @@
             </section>
             
             <!-- Music Section -->
-            <section id="music-section" class="section music">
+            <section id="music-section" class="section music reveal">
                 <div class="container">
                     <h2 class="section-title" data-key="music-title">Ouvindo <span class="highlight">Agora</span></h2>
                     
@@ -301,7 +301,7 @@
             </section>
 
             <!-- Skills Section -->
-            <section id="skills-section" class="section skills">
+            <section id="skills-section" class="section skills reveal">
                 <div class="container">
                     <h2 class="section-title" data-key="skills-title">Minhas <span class="highlight">Skills</span></h2>
                     
@@ -449,7 +449,7 @@
                     
                     <br>
 
-                    <div class="category">
+                    <div class="category reveal">
                         <h3 class="category-title" data-key="tools-technologies">Ferramentas & Tecnologias</h3>
                         <div class="skills-grid compact">
                             <div class="tool-card" data-tool="git">
@@ -618,7 +618,7 @@
             </section>
 
             <!-- Certifications Section -->
-            <section id="certifications-section" class="section certifications">
+            <section id="certifications-section" class="section certifications reveal">
                 <div class="container">
                     <h2 class="section-title" data-key="certifications-title">Meus <span class="highlight">Certificados</span></h2>
                     
@@ -695,12 +695,23 @@
             </section>
             
             <!-- Projects Section -->
-            <section id="projects-section" class="section projects">
+            <section id="projects-section" class="section projects reveal">
                 <div class="container">
                     <h2 class="section-title" data-key="projects-title">Meus <span class="highlight">Projetos</span></h2>
                     
+                    <div class="projects-filter" id="projects-filter">
+                        <button class="filter-btn active" data-filter="all" data-key="filter-all">Todos</button>
+                        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                        <button class="filter-btn" data-filter="react">React</button>
+                        <button class="filter-btn" data-filter="spring">Spring</button>
+                        <button class="filter-btn" data-filter="dotnet">.NET</button>
+                        <button class="filter-btn" data-filter="sqlserver">SQL Server</button>
+                        <button class="filter-btn" data-filter="html">HTML</button>
+                        <button class="filter-btn" data-filter="css">CSS</button>
+                    </div>
+                    
                     <div class="projects-grid">
-                        <div class="project-card">
+                        <div class="project-card" data-tech="react spring sqlserver">
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fa-solid fa-building-user"></i>
@@ -715,13 +726,13 @@
                                 <span class="tech-tag">Spring</span>
                                 <span class="tech-tag">SqlServer</span>
                             </div>
-                            <a href="https://github.com/devlucasaf/SGC-Sistema-de-Gestao-De-Condominio" target="_blank" class="project-link">
+                            <a href="https://github.com/devlucasaf/SGC-Sistema-de-Gestao-De-Condominio" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <span data-key="view-project">Ver Projeto</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                         
-                        <div class="project-card">
+                        <div class="project-card" data-tech="html css javascript">
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fa-regular fa-futbol"></i>
@@ -736,13 +747,13 @@
                                 <span class="tech-tag">CSS</span>
                                 <span class="tech-tag">JavaScript</span>
                             </div>
-                            <a href="https://github.com/devlucasaf/Football-Games-11" class="project-link">
+                            <a href="https://github.com/devlucasaf/Football-Games-11" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <span data-key="view-project">Ver Projeto</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                         
-                        <div class="project-card">
+                        <div class="project-card" data-tech="html css javascript">
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fa-solid fa-paintbrush"></i>
@@ -757,13 +768,13 @@
                                 <span class="tech-tag">CSS</span>
                                 <span class="tech-tag">JavaScript</span>
                             </div>
-                            <a href="https://github.com/devlucasaf/naka-tattos" class="project-link">
+                            <a href="https://github.com/devlucasaf/naka-tattos" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <span data-key="view-project">Ver Projeto</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
 
-                        <div class="project-card">
+                        <div class="project-card" data-tech="javascript spring sqlserver">
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fa-solid fa-piggy-bank"></i>
@@ -778,13 +789,13 @@
                                 <span class="tech-tag">Spring</span>
                                 <span class="tech-tag">SqlServer</span>
                             </div>
-                            <a href="https://github.com/devlucasaf/money-tracker-control" class="project-link">
+                            <a href="https://github.com/devlucasaf/money-tracker-control" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <span data-key="view-project">Ver Projeto</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
 
-                        <div class="project-card">
+                        <div class="project-card" data-tech="html css javascript">
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fas fa-laptop-code"></i>
@@ -799,13 +810,13 @@
                                 <span class="tech-tag">CSS</span>
                                 <span class="tech-tag">JavaScript</span>
                             </div>
-                            <a href="https://github.com/devlucasaf/Portifolio" target="_blank" class="project-link">
+                            <a href="https://github.com/devlucasaf/Portifolio" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <span data-key="view-project">Ver Projeto</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
 
-                        <div class="project-card">
+                        <div class="project-card" data-tech="dotnet react sqlserver">
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fas fa-ticket"></i>
@@ -820,15 +831,19 @@
                                 <span class="tech-tag">React</span>
                                 <span class="tech-tag">SqlServer</span>
                             </div>
-                            <a href="https://github.com/devlucasaf/LiveEvents-Ticket" target="_blank" class="project-link">
+                            <a href="https://github.com/devlucasaf/LiveEvents-Ticket" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <span data-key="view-project">Ver Projeto</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                     
+                    <p class="projects-empty" id="projects-empty" data-key="projects-empty" hidden>
+                        Nenhum projeto encontrado para essa tecnologia.
+                    </p>
+                    
                     <div class="other-projects-section">
-                        <a href="https://github.com/devlucasaf?tab=repositories" target="_blank" class="other-projects-link">
+                        <a href="https://github.com/devlucasaf?tab=repositories" target="_blank" rel="noopener noreferrer" class="other-projects-link">
                             <span data-key="other-projects-text">Meus outros projetos/estudos</span>
                             <i class="fas fa-external-link-alt"></i>
                         </a>
@@ -837,7 +852,7 @@
             </section>
             
             <!-- Contact Section -->
-            <section id="contact-section" class="section contact">
+            <section id="contact-section" class="section contact reveal">
                 <div class="container">
                     <h2 class="section-title" data-key="contact-title">Entre em <span class="highlight">Contato</span></h2>
                     
@@ -900,12 +915,20 @@
                         <form class="contact-form" id="contact-form">
                             <div class="form-group">
                                 <label for="name" data-key="name-label">Nome</label>
-                                <input type="text" id="name" required>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    required
+                                >
                             </div>
                             
                             <div class="form-group">
                                 <label for="email" data-key="email-label">E-mail</label>
-                                <input type="email" id="email" required>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    required
+                                >
                             </div>
                             
                             <div class="form-group">
@@ -940,6 +963,10 @@
                 </div>
             </div>
         </footer>
+        
+        <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+        </button>
         
         <script type="module" src="js/translations.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>

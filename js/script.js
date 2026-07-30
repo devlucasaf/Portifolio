@@ -306,3 +306,116 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// --- ANIMAÇÕES DE ENTRADA AO ROLAR A PÁGINA ---
+document.addEventListener("DOMContentLoaded", () => {
+    const observadorRevelar = new IntersectionObserver(
+        (entradas, observador) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add("visible");
+                    observador.unobserve(entrada.target);
+                }
+            });
+        },
+        {
+            root: null,
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => observadorRevelar.observe(el));
+});
+
+
+// --- BOTÃO VOLTAR AO TOPO ---
+document.addEventListener("DOMContentLoaded", () => {
+    const botaoTopo = document.getElementById("back-to-top");
+
+    if (!botaoTopo) {
+        return;
+    }
+
+    // --- MOSTRA OU OCULTA O BOTÃO CONFORME O SCROLL ---
+    function alternarVisibilidade() {
+        if (window.scrollY > 400) {
+            botaoTopo.classList.add("visible");
+        } else {
+            botaoTopo.classList.remove("visible");
+        }
+    }
+
+    window.addEventListener("scroll", alternarVisibilidade, { passive: true });
+    alternarVisibilidade();
+
+    // --- ROLA SUAVEMENTE ATÉ O TOPO AO CLICAR ---
+    botaoTopo.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+
+// --- FILTRO DE PROJETOS POR TECNOLOGIA ---
+document.addEventListener("DOMContentLoaded", () => {
+    const barraFiltro = document.getElementById("projects-filter");
+    const cardsProjeto = document.querySelectorAll(".projects-grid .project-card");
+    const mensagemVazio = document.getElementById("projects-empty");
+
+    if (!barraFiltro || cardsProjeto.length === 0) {
+        return;
+    }
+
+    const botoesFiltro = barraFiltro.querySelectorAll(".filter-btn");
+
+    // --- APLICA O FILTRO E ANIMA OS CARDS ---
+    function aplicarFiltro(tecnologia) {
+        let visiveis = 0;
+
+        cardsProjeto.forEach(card => {
+            const tecnologias = (card.dataset.tech || "").split(" ");
+            const combina = tecnologia === "all" || tecnologias.includes(tecnologia);
+
+            card.classList.remove("filter-enter");
+            card.style.animationDelay = "";
+
+            if (!combina) {
+                card.classList.add("hidden");
+                return;
+            }
+
+            card.classList.remove("hidden");
+
+            card.style.animationDelay = `${visiveis * 100}ms`;
+
+            void card.offsetWidth;
+
+            card.classList.add("filter-enter");
+
+            card.addEventListener("animationend", () => {
+                card.classList.remove("filter-enter");
+                card.style.animationDelay = "";
+            },
+            { 
+                once: true 
+            });
+
+            visiveis++;
+        });
+
+        if (mensagemVazio) {
+            mensagemVazio.hidden = visiveis !== 0;
+        }
+    }
+
+    // --- CONFIGURA OS BOTÕES DO FILTRO ---
+    botoesFiltro.forEach(botao => {
+        botao.addEventListener("click", () => {
+            botoesFiltro.forEach(outroBotao => {
+                outroBotao.classList.remove("active");
+            });
+
+            botao.classList.add("active");
+            aplicarFiltro(botao.dataset.filter);
+        });
+    });
+});
+

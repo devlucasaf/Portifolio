@@ -116,6 +116,8 @@ const translationsPtBr = {
     "view-project": "Ver Projeto",
     "coming-soon": "Em Breve",
     "other-projects-text": "Meus outros projetos/estudos",
+    "filter-all": "Todos",
+    "projects-empty": "Nenhum projeto encontrado para essa tecnologia.",
 
     // Certifications Section
     "certifications-title": "Meus Certificados",
