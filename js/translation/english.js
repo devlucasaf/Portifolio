@@ -78,11 +78,14 @@ const translationsEnUs = {
     "dotnet": ".Net",
     "react": "React",
     "sqlserver": "SQL Server",
+    "nodejs": "Node.js",
 
     // Tools
     "git": "Git",
     "github": "GitHub",
     "gitlab": "GitLab",
+    "subversion": "Subversion",
+    "tortoisesvn": "TortoiseSVN",
     "pgadmin4": "PGAdmin4",
     "jet-brains": "JetBrains",
     "pycharm": "PyCharm",
@@ -107,7 +110,7 @@ const translationsEnUs = {
     "naka-tattos-project-desc": "Professional website for the tattoo artist Naka Tattos.",
     "money-tracker-project-title": "Money Tracker Control",
     "money-tracker-project-desc": "Personal finance control project.",
-    "academico-project-title": "ERP-Academic-School-System",
+    "academico-project-title": "ERP-Academic",
     "academico-project-desc": "Academic Management System ERP",
     "liveevents-project-desc": "Event management and online ticket sales system.",
     "liveevents-project-title": "LiveEvents-Ticket",
