@@ -5,7 +5,7 @@
 
 # Portfólio
 
-![Preview of the current progress](./assets/portfolio-pt-br.png)
+![Preview of the current progress](./assets/imgs/portfolio.png)
 
 # 💻 Sobre
 
@@ -27,8 +27,7 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
  │   └── script.js
  ├── assets/
  │   ├── flags/
- │   └── icons/
- ├── README-pt-br.md
+ │   └── imgs/
  └── README.md
 ```
 
@@ -36,7 +35,9 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
 
 - **Home:** Minha apresentação.
 - **Sobre mim:** abordo uma pequena apresentação sobre mim e a minha trajetória.
+- **Música:** minhas principais playlist e o que escuto agora.
 - **Skills:** liguagens e ferramentas que eu utilizo.
+- **Certificados:** certificados dos cursos que concluí.
 - **Meus Projetos:** alguns projetos desenvolvidos recentemente por mim.
 - **Contatos:** minhas redes sociais e formas de entrar em contato comigo.
 
