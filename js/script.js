@@ -170,6 +170,10 @@ function inicializarPagina() {
         console.log(`Traduções disponíveis: pt-br (${Object.keys(translations["pt-br"]).length} itens), en-us (${Object.keys(translations["en-us"]).length} itens)`);
     }
 
+    // --- INICIALIZA MODAL E BOTÕES DOS PROJETOS ---
+    configurarModal();
+    configurarBotoesProjetos();
+
     console.log("Página inicializada com sucesso!");
 }
 
@@ -419,3 +423,266 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// --- DADOS DOS PROJETOS ---
+const projetos = {
+    "sgc": {
+        titulo: "SGC – Sistema de Gestão Condominial",
+        descricao: "Sistema completo para administração de condomínios, permitindo gerenciar moradores, unidades, solicitações de manutenção, reservas de áreas comuns e comunicação interna. O objetivo é facilitar a gestão e melhorar a experiência dos moradores.",
+        status: "Concluído",
+        tipo: "Projeto pessoal",
+        funcionalidades: [
+            "Cadastro e gerenciamento de moradores e unidades",
+            "Abertura e acompanhamento de solicitações",
+            "Reserva de áreas comuns",
+            "Envio de comunicados internos",
+            "Painel administrativo com relatórios"
+        ],
+        participacao: "Desenvolvimento full-stack do sistema, desde a modelagem do banco de dados (SQL Server) até a criação da API REST com Spring Boot e a interface com React. Fui responsável por toda a lógica de negócio, autenticação de usuários e geração de relatórios.",
+        desafios: "O principal desafio foi gerenciar o relacionamento entre as entidades (moradores, unidades e solicitações) de forma eficiente, evitando problemas de integridade referencial. Utilizei JPA/Hibernate com Spring Data e fiz um planejamento cuidadoso das chaves estrangeiras para garantir a consistência dos dados.",
+        tecnologias: ["React", "Spring Boot", "SQL Server"],
+        imagem: "", 
+        repositorio: "https://github.com/devlucasaf/SGC-Sistema-de-Gestao-De-Condominio",
+        demonstracao: ""
+    },
+    "football-games-11": {
+        titulo: "Football Games 11",
+        descricao: "Plataforma interativa de minijogos de futebol para entretenimento rápido, desenvolvida totalmente no front-end com mecânicas simples e responsivas.",
+        status: "Concluído",
+        tipo: "Projeto pessoal",
+        funcionalidades: [
+            "Minijogos de futebol com interação via teclado/mouse",
+            "Sistema de pontuação e recordes",
+            "Interface amigável e responsiva"
+        ],
+        participacao: "Desenvolvimento completo do front-end, utilizando HTML, CSS e JavaScript puro. Criei toda a lógica dos minijogos, sistema de pontuação e a interface responsiva.",
+        desafios: "Implementar a lógica de interação dos jogos no navegador sem bibliotecas, gerenciando colisões e estado com JS puro.",
+        tecnologias: ["HTML", "CSS", "JavaScript"],
+        imagem: "",
+        repositorio: "https://github.com/devlucasaf/Football-Games-11",
+        demonstracao: ""
+    },
+    "naka-tattos": {
+        titulo: "Naka Tattos",
+        descricao: "Site profissional para o tatuador Naka Tattos, com portfólio, informações de contato, agendamento e apresentação dos trabalhos.",
+        status: "Concluído",
+        tipo: "Projeto profissional",
+        funcionalidades: [
+            "Galeria de trabalhos com filtros",
+            "Página de contato e redes sociais",
+            "Formulário para orçamento",
+            "Design moderno e responsivo"
+        ],
+        participacao: "Desenvolvimento do site profissional, incluindo design, portfólio com filtros, formulário de contato e otimização mobile.",
+        desafios: "Garantir carregamento rápido da galeria de imagens e navegação intuitiva, otimizando ativos e organizando o CSS.",
+        tecnologias: ["HTML", "CSS", "JavaScript"],
+        imagem: "",
+        repositorio: "https://github.com/devlucasaf/naka-tattos",
+        demonstracao: ""
+    },
+    "money-tracker-control": {
+        titulo: "Money Tracker Control",
+        descricao: "Aplicação de finanças pessoais para registrar receitas e despesas, categorizar transações, visualizar saldo e gerar relatórios simples para controle orçamentário.",
+        status: "Concluído",
+        tipo: "Projeto pessoal",
+        funcionalidades: [
+            "Registro de receitas e despesas",
+            "Categorização de transações",
+            "Exibição de saldo atual e histórico",
+            "Filtros por período e categoria"
+        ],
+        participacao: "Construção da API Back-End com Spring Boot, definição de rotas, regras de negócio e integração com o front-end JavaScript.",
+        desafios: "Criar sistema de categorização e filtros dinâmicos com queries eficientes no SQL Server e tratamento de datas na API.",
+        tecnologias: ["JavaScript", "Spring Boot", "SQL Server"],
+        imagem: "",
+        repositorio: "https://github.com/devlucasaf/money-tracker-control",
+    },
+    "erp-academic": {
+        titulo: "ERP Academic – Sistema Acadêmico",
+        descricao: "Sistema de gestão acadêmica para administrar alunos, professores, turmas, disciplinas e matrículas, com controle de notas e frequência, visando otimizar a rotina de instituições de ensino.",
+        status: "Em desenvolvimento",
+        tipo: "Projeto acadêmico",
+        funcionalidades: [
+            "Cadastro de alunos, professores e turmas",
+            "Matrícula de alunos em disciplinas",
+            "Lançamento de notas e frequência",
+            "Geração de boletins e relatórios",
+            "Painel administrativo completo"
+        ],
+        participacao: "Desenvolvimento do back-end com Spring Boot, criação das entidades, endpoints REST, modelagem relacional e lógica de matrícula.",
+        desafios: "Implementar lógica de matrícula validando conflitos de horário e pré-requisitos, utilizando transações robustas no banco.",
+        tecnologias: ["Spring Boot", "SQL Server", "JavaScript"],
+        repositorio: "https://github.com/devlucasaf/ERP-Academic-School-System",
+    },
+    "liveevents-ticket": {
+        titulo: "LiveEvents Ticket",
+        descricao: "Sistema de gerenciamento de eventos e venda de ingressos online, com funcionalidades para criação de eventos, controle de lotes, pagamentos e emissão de ingressos digitais.",
+        status: "Concluído",
+        tipo: "Projeto pessoal",
+        funcionalidades: [
+            "Criação e edição de eventos",
+            "Configuração de lotes e preços",
+            "Integração com gateway de pagamento (simulado)",
+            "Emissão de ingressos com QR Code",
+            "Painel do organizador e relatórios"
+        ],
+        participacao: "Desenvolvimento do back-end com .NET e integração com React, focando na lógica de eventos, lotes e reservas.",
+        desafios: "Implementar controle de concorrência para evitar compra duplicada de ingressos, utilizando bloqueios otimistas no banco.",
+        tecnologias: [".NET", "React", "SQL Server"],
+        repositorio: "https://github.com/devlucasaf/LiveEvents-Ticket",
+    }
+};
+
+// --- MODAL REUTILIZÁVEL ---
+let currentModalTrigger = null;
+
+function abrirModalProjeto(projectId) {
+    const projeto = projetos[projectId];
+    if (!projeto) {
+        console.warn(`Projeto com ID "${projectId}" não encontrado.`);
+        return;
+    }
+
+    const modal = document.getElementById("project-modal");
+    if (!modal) {
+        return;
+    }
+
+    const titulo = document.getElementById("modal-title");
+    const descricao = document.getElementById("modal-description");
+    const status = document.getElementById("modal-status");
+    const tipo = document.getElementById("modal-type");
+    const features = document.getElementById("modal-features");
+    const participation = document.getElementById("modal-participation");
+    const challenges = document.getElementById("modal-challenges");
+    const techContainer = document.getElementById("modal-tech");
+    const repoLink = document.getElementById("modal-repo-link");
+    const demoLink = document.getElementById("modal-demo-link");
+    const imageWrapper = document.getElementById("modal-image-wrapper");
+    const image = document.getElementById("modal-image");
+
+    titulo.textContent = projeto.titulo;
+    descricao.textContent = projeto.descricao;
+
+    status.textContent = projeto.status;
+    status.className = "modal-status";
+    const statusClass = `status-${projeto.status.toLowerCase().replace(/ /g, "-")}`;
+    status.classList.add(statusClass);
+
+    tipo.textContent = projeto.tipo;
+    tipo.className = "modal-type";
+
+    features.innerHTML = "";
+    if (projeto.funcionalidades && projeto.funcionalidades.length) {
+        projeto.funcionalidades.forEach(f => {
+            const li = document.createElement("li");
+            li.textContent = f;
+            features.appendChild(li);
+        });
+    } else {
+        features.innerHTML = "<li data-key='no-features'>[PREENCHER FUNCIONALIDADES]</li>";
+    }
+
+    participation.textContent = projeto.participacao || "[PREENCHER PARTICIPAÇÃO]";
+    challenges.textContent = projeto.desafios || "[PREENCHER DESAFIOS]";
+
+    techContainer.innerHTML = "";
+    if (projeto.tecnologias && projeto.tecnologias.length) {
+        projeto.tecnologias.forEach(tech => {
+            const span = document.createElement("span");
+            span.className = "tech-tag";
+            span.textContent = tech;
+            techContainer.appendChild(span);
+        });
+    }
+
+    if (projeto.imagem && projeto.imagem.trim() !== "") {
+        image.src = projeto.imagem;
+        image.alt = `Imagem do projeto ${projeto.titulo}`;
+        imageWrapper.hidden = false;
+    } else {
+        imageWrapper.hidden = true;
+    }
+
+    repoLink.href = projeto.repositorio;
+    if (projeto.demonstracao && projeto.demonstracao.trim() !== "") {
+        demoLink.href = projeto.demonstracao;
+        demoLink.hidden = false;
+    } else {
+        demoLink.hidden = true;
+    }
+
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+
+    const firstFocusable = modal.querySelector(".modal-close");
+    if (firstFocusable) {
+        setTimeout(() => firstFocusable.focus(), 100);
+    }
+
+    currentModalTrigger = document.activeElement;
+}
+
+function fecharModalProjeto() {
+    const modal = document.getElementById("project-modal");
+    if (!modal) {
+        return;
+    }
+
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+
+    if (currentModalTrigger) {
+        currentModalTrigger.focus();
+        currentModalTrigger = null;
+    }
+}
+
+// --- CONFIGURAR EVENTOS DO MODAL ---
+function configurarModal() {
+    const modal = document.getElementById("project-modal");
+    if (!modal) {
+        return;
+    }
+
+    const closeBtn = modal.querySelector(".modal-close");
+    const backdrop = modal.querySelector(".modal-backdrop");
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", fecharModalProjeto);
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener("click", fecharModalProjeto);
+    }
+
+    // --- FECHAR COM ESCAPE ---
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+            e.preventDefault();
+            fecharModalProjeto();
+        }
+    });
+
+    const content = modal.querySelector(".modal-content");
+    if (content) {
+        content.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+    }
+}
+
+// --- INICIALIZAR EVENTOS DOS BOTÕES "SAIBA MAIS"
+function configurarBotoesProjetos() {
+    const botoes = document.querySelectorAll(".project-details-btn");
+    botoes.forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.stopPropagation();
+            const projectId = this.dataset.project;
+            if (projectId) {
+                abrirModalProjeto(projectId);
+            } else {
+                console.warn("Botão 'Saiba mais' sem data-project");
+            }
+        });
+    });
+}
