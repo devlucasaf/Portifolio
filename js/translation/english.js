@@ -14,9 +14,10 @@ const translationsEnUs = {
 
     // Hero Section
     "welcome": "Welcome to my portfolio",
-    "hero-subtitle": "Back-End Developer | Java | JavaScript | Python | Ruby | SQL",
+    "hero-subtitle": "Back-End Developer | Java | C# | JavaScript | Python | Ruby | SQL",
     "view-projects": "View Projects",
     "contact-me": "Contact Me",
+    "download-resume": "Download Resume",
     "scroll-down": "Scroll Down",
 
     // About Section
@@ -66,39 +67,60 @@ const translationsEnUs = {
     "tools-technologies": "Tools & Technologies",
 
     // Technologies
+    "programming-languages-title": "Programming Languages",
+    "backend-title": "Backend",
     "python": "Python",
     "java": "Java",
+    "javascript": "JavaScript",
     "csharp": "C#",
     "ruby": "Ruby",
-    "sql": "SQL",
+
+    "frontend-title": "Frontend",
     "html": "HTML",
     "css": "CSS",
-    "javascript": "JavaScript",
+
+    "database-title": "Database",
+    "sql": "SQL",
+    "sqlserver": "SQL Server",
+
+    "frameworks-title": "Frameworks",
     "spring-boot": "Spring Boot",
     "dotnet": ".Net",
+    "rails": "Rails",
+    "django": "Django",
     "react": "React",
-    "sqlserver": "SQL Server",
     "nodejs": "Node.js",
 
-    // Tools
+    "ides-title": "IDEs",
+    "jet-brains": "JetBrains",
+    "pycharm": "PyCharm",
+    "intellij": "IntelliJ",
+    "rubymine": "RubyMine",
+    "rider": "Rider",
+    "data-grip": "DataGrip",
+    "android-studio": "Android Studio",
+    "antigravity": "Antigravity",
+    "ssms": "SSMS",
+    "vs-code": "VS Code",
+    "visual-studio": "Visual Studio",
+    "pgadmin4": "PGAdmin4",
+
+    // Ferramentas
+    "version-control-title": "Version Control & Collaboration",
     "git": "Git",
     "github": "GitHub",
     "gitlab": "GitLab",
     "subversion": "Subversion",
     "tortoisesvn": "TortoiseSVN",
-    "pgadmin4": "PGAdmin4",
-    "jet-brains": "JetBrains",
-    "pycharm": "PyCharm",
-    "intellij": "IntelliJ",
-    "rubymine": "RubyMine",
-    "windows": "Windows",
-    "ssms": "SSMS",
-    "vs-code": "VS Code",
-    "visual-studio": "Visual Studio",
+
+    "office-title": "Office",
     "power-bi": "Power BI",
     "word": "Word",
     "power-point": "Power Point",
     "excel": "Excel",
+
+    "operating-systems": "Operating Systems",
+    "windows": "Windows",
 
     // Projects Section
     "projects-title": "My Projects",
@@ -157,7 +179,7 @@ const translationsEnUs = {
 
     // Footer
     "footer-text": "Built with HTML, CSS and JavaScript and lots of code",
-    "copyright": "© 2025 Lucas. All rights reserved."
+    "copyright": "© 2026 Lucas. All rights reserved."
 };
 
 // --- EXPORTA AS TRADUÇÕES EM INGLÊS PARA O MÓDULO PRINCIPAL ---

@@ -14,9 +14,10 @@ const translationsPtBr = {
 
     // Hero Section
     "welcome": "Bem-vindo ao meu portfólio",
-    "hero-subtitle": "Desenvolvedor Back-End | Java | JavaScript | Python | Ruby | SQL",
+    "hero-subtitle": "Desenvolvedor Back-End | Java | C# | JavaScript | Python | Ruby | SQL",
     "view-projects": "Ver Projetos",
     "contact-me": "Contate-me",
+    "download-resume": "Baixar Currículo",
     "scroll-down": "Role para baixo",
 
     // About Section
@@ -66,39 +67,60 @@ const translationsPtBr = {
     "tools-technologies": "Ferramentas & Tecnologias",
 
     // Tecnologias
+    "programming-languages-title": "Linguagens de Programação",
+    "backend-title": "Backend",
     "python": "Python",
     "java": "Java",
+    "javascript": "JavaScript",
     "csharp": "C#",
     "ruby": "Ruby",
-    "sql": "SQL",
+
+    "frontend-title": "Frontend",
     "html": "HTML",
     "css": "CSS",
-    "javascript": "JavaScript",
+
+    "database-title": "Banco de Dados",
+    "sql": "SQL",
+    "sqlserver": "SQL Server",
+
+    "frameworks-title": "Frameworks",
     "spring-boot": "Spring Boot",
     "dotnet": ".Net",
+    "rails": "Rails",
+    "django": "Django",
     "react": "React",
-    "sqlserver": "SQL Server",
     "nodejs": "Node.js",
 
-    // Ferramentas
-    "git": "Git",
-    "github": "GitHub",
-    "gitlab": "GitLab",
-    "pgadmin4": "PGAdmin4",
-    "subversion": "Subversion",
-    "tortoisesvn": "TortoiseSVN",
+    "ides-title": "IDEs",
     "jet-brains": "JetBrains",
     "pycharm": "PyCharm",
     "intellij": "IntelliJ",
     "rubymine": "RubyMine",
-    "windows": "Windows",
+    "rider": "Rider",
+    "data-grip": "DataGrip",
+    "android-studio": "Android Studio",
+    "antigravity": "Antigravity",
     "ssms": "SSMS",
     "vs-code": "VS Code",
     "visual-studio": "Visual Studio",
+    "pgadmin4": "PGAdmin4",
+
+    // Ferramentas
+    "version-control-title": "Versionamento e Colaborações",
+    "git": "Git",
+    "github": "GitHub",
+    "gitlab": "GitLab",
+    "subversion": "Subversion",
+    "tortoisesvn": "TortoiseSVN",
+
+    "office-title": "Office",
     "power-bi": "Power BI",
     "word": "Word",
     "power-point": "Power Point",
     "excel": "Excel",
+
+    "operating-systems": "Sistemas Operacionais",
+    "windows": "Windows",
 
     // Projects Section
     "projects-title": "Meus Projetos",
