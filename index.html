@@ -15,6 +15,20 @@
     <body>
         <div class="cursor-dot"></div>
         <div class="cursor-outline"></div>
+
+        <div class="background-animated" aria-hidden="true">
+            <div class="bg-layer bg-gradient"></div>
+            <div class="bg-layer bg-particles">
+                <div class="particle" data-speed="0.2"></div>
+                <div class="particle" data-speed="0.5"></div>
+                <div class="particle" data-speed="0.8"></div>
+                <div class="particle" data-speed="0.3"></div>
+                <div class="particle" data-speed="0.6"></div>
+                <div class="particle" data-speed="0.9"></div>
+                <div class="particle" data-speed="0.4"></div>
+                <div class="particle" data-speed="0.7"></div>
+            </div>
+        </div>
         
         <header>
             <nav class="navbar">
@@ -309,351 +323,466 @@
                     <h2 class="section-title" data-key="skills-title">Minhas <span class="highlight">Skills</span></h2>
                     
                     <div class="skills-categories">
+                        <!-- --- LINGUAGENS DE PROGRAMAÇÃO --- -->
                         <div class="category">
-                            <h3 class="category-title" data-key="programming-languages">Linguagens de Programação</h3>
-                            <div class="skills-grid">
-                                <div class="skill-card" data-tech="python">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png" 
-                                            alt="Python"
-                                        />
-                                    </div>
-                                    <h4 class="skill-name" data-key="python">Python</h4>
-                                </div>
-                                
-                                <div class="skill-card" data-tech="java">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" 
-                                            alt="Java"
-                                        />
-                                    </div>
-                                    <h4 class="skill-name" data-key="java">Java</h4>
-                                </div>
+                            <h3 class="category-title" data-key="programming-languages-title">Linguagens de Programação</h3>
 
-                                <div class="skill-card" data-tech="csharp">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/250px-C_Sharp_Logo_2023.svg.png" 
-                                            alt="C#"
-                                        />
+                            <!-- Backend -->
+                            <div class="subcategory">
+                                <h4 class="subcategory-title">
+                                    <i class="fas fa-server"></i> 
+                                    <span data-key="backend-title">Backend</span>
+                                </h4>
+                                <div class="skills-grid">
+                                    <div class="skill-card" data-tech="python">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png" 
+                                                alt="Python" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="python">Python</h4>
                                     </div>
-                                    <h4 class="skill-name" data-key="csharp">C#</h4>
+                                    <div class="skill-card" data-tech="java">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" 
+                                                alt="Java" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="java">Java</h4>
+                                    </div>
+                                    <div class="skill-card" data-tech="csharp">
+                                        <div class="skill-icon">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/250px-C_Sharp_Logo_2023.svg.png" alt="C#" />
+                                        </div>
+                                        <h4 class="skill-name" data-key="csharp">C#</h4>
+                                    </div>
+                                    <div class="skill-card" data-tech="ruby">
+                                        <div class="skill-icon">
+                                            <img src="https://images.vexels.com/media/users/3/166485/isolated/preview/d4061b653e6ba02ad0afdc79e0315a25-icone-da-linguagem-de-programacao-ruby.png" alt="Ruby" />
+                                        </div>
+                                        <h4 class="skill-name" data-key="ruby">Ruby</h4>
+                                    </div>
+                                    <div class="skill-card" data-tech="javascript">
+                                        <div class="skill-icon">
+                                            <img src="https://img.icons8.com/color/512/javascript.png" alt="JavaScript" />
+                                        </div>
+                                        <h4 class="skill-name" data-key="javascript">JavaScript</h4>
+                                    </div>
                                 </div>
-                                
-                                <div class="skill-card" data-tech="ruby">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://images.vexels.com/media/users/3/166485/isolated/preview/d4061b653e6ba02ad0afdc79e0315a25-icone-da-linguagem-de-programacao-ruby.png" 
-                                            alt="Ruby"
-                                        />
+                            </div>
+
+                            <!-- Frontend -->
+                            <div class="subcategory">
+                                <h4 class="subcategory-title"><i class="fas fa-laptop-code"></i> <span data-key="frontend-title">Frontend</span></h4>
+                                <div class="skills-grid">
+                                    <div class="skill-card" data-tech="html">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://images.icon-icons.com/171/PNG/512/html5_23329.png" 
+                                                alt="HTML" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="html">HTML</h4>
                                     </div>
-                                    <h4 class="skill-name" data-key="ruby">Ruby</h4>
+
+                                    <div class="skill-card" data-tech="css">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/css-icon.png" 
+                                                alt="CSS" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="css">CSS</h4>
+                                    </div>
                                 </div>
-                                
-                                <div class="skill-card" data-tech="javascript">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://img.icons8.com/color/512/javascript.png" 
-                                            alt="JavaScript"
-                                        />
+                            </div>
+
+                            <!-- Banco de Dados -->
+                            <div class="subcategory">
+                                <h4 class="subcategory-title">
+                                    <i class="fas fa-database"></i>
+                                    <span data-key="database-title">Banco de Dados</span>
+                                </h4>
+                                <div class="skills-grid">
+                                    <div class="skill-card" data-tech="sql">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://cdn-icons-png.flaticon.com/512/528/528260.png" 
+                                                alt="SQL" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="sql">SQL</h4>
                                     </div>
-                                    <h4 class="skill-name" data-key="javascript">JavaScript</h4>
+
+                                    <div class="skill-card" data-tech="sqlserver">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Microsoft_SQL_Server_2025_icon.svg/3840px-Microsoft_SQL_Server_2025_icon.svg.png" 
+                                                alt="SQL Server" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="sqlserver">SQL Server</h4>
+                                    </div>
+
+                                    <div class="skill-card" data-tech="sqlite">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/3840px-SQLite370.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" 
+                                                alt="SQLite" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="sqlserver">SQLite</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Frameworks -->
+                            <div class="subcategory">
+                                <h4 class="subcategory-title">
+                                    <i class="fas fa-cubes"></i> 
+                                    <span data-key="frameworks-title">Frameworks</span>
+                                </h4>
+                                <div class="skills-grid">
+                                    <div class="skill-card" data-tech="spring-boot">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/960px-Spring_Boot.svg.png" 
+                                                alt="Spring Boot" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="spring-boot">Spring Boot</h4>
+                                    </div>
+
+                                    <div class="skill-card" data-tech="dotnet">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://user-images.githubusercontent.com/42860908/106164530-120e5680-61b0-11eb-954c-969c7031ffd4.png" 
+                                                alt=".NET" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="dotnet">.NET</h4>
+                                    </div>
+
+                                    <div class="skill-card" data-tech="rails">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://download.logo.wine/logo/Ruby_on_Rails/Ruby_on_Rails-Logo.wine.png" 
+                                                alt="Rails" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="rails">Rails</h4>
+                                    </div>
+
+                                    <div class="skill-card" data-tech="django">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/django.png" 
+                                                alt="Django" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="django">Django</h4>
+                                    </div>
+
+                                    <div class="skill-card" data-tech="nodejs">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-icon-svg-download-png-1174935.png" 
+                                                alt="Node.js" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="nodejs">Node.js</h4>
+                                    </div>
+
+                                    <div class="skill-card" data-tech="react">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" 
+                                                alt="React" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="react">React</h4>
+                                    </div>
+
+                                    <div class="skill-card" data-tech="vite">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/500px-Vitejs-logo.svg.png" 
+                                                alt="Vite" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="vite">Vite</h4>
+                                    </div>
+
+                                    <div class="skill-card" data-tech="nextjs">
+                                        <div class="skill-icon">
+                                            <img 
+                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nextjs.png" 
+                                                alt="NextJS" 
+                                            />
+                                        </div>
+                                        <h4 class="skill-name" data-key="nextjs">NextJS</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="category">
-                            <h3 class="category-title" data-key="web-technologies">Tecnologias Web</h3>
-                            <div class="skills-grid">
-                                <div class="skill-card" data-tech="html">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://images.icon-icons.com/171/PNG/512/html5_23329.png" 
-                                            alt="HTML"
-                                        />
+
+                        <!-- --- FERRAMENTAS & TECNOLOGIAS --- -->
+                        <div class="category reveal">
+                            <h3 class="category-title" data-key="tools-title">Ferramentas &amp; Tecnologias</h3>
+
+                            <!-- IDEs -->
+                            <div class="subcategory">
+                                <h4 class="subcategory-title">
+                                    <i class="fas fa-code"></i> 
+                                    <span data-key="ides-title">IDEs</span>
+                                </h4>
+                                <div class="skills-grid compact">
+                                    <div class="tool-card" data-tool="jet-brains">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://img.icons8.com/color/600/jetbrains.png" 
+                                                alt="JetBrains" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="jet-brains">JetBrains</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="html">HTML</h4>
-                                </div>
-                                
-                                <div class="skill-card" data-tech="css">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/css-icon.png" 
-                                            alt="CSS"
-                                        />
+
+                                    <div class="tool-card" data-tool="pycharm">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/JetBrains_PyCharm_Product_Icon.svg/3840px-JetBrains_PyCharm_Product_Icon.svg.png" 
+                                                alt="PyCharm" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="pycharm">PyCharm</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="css">CSS</h4>
-                                </div>
-                                
-                                <div class="skill-card" data-tech="sql">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://cdn-icons-png.flaticon.com/512/528/528260.png" 
-                                            alt="SQL"
-                                        />
+
+                                    <div class="tool-card" data-tool="intellij">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/960px-IntelliJ_IDEA_Icon.svg.png"
+                                                alt="IntelliJ" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="intellij">IntelliJ</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="sql">SQL</h4>
-                                </div>
 
-                                <div class="skill-card" data-tech="sqlserver">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Microsoft_SQL_Server_2025_icon.svg/3840px-Microsoft_SQL_Server_2025_icon.svg.png" 
-                                            alt="SQL Server"
-                                        />
+                                    <div class="tool-card" data-tool="rubymine">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/RubyMine_Icon.svg/960px-RubyMine_Icon.svg.png" 
+                                                alt="RubyMine" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="rubymine">RubyMine</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="sqlserver">SQL Server</h4>
-                                </div>
 
-                                <div class="skill-card" data-tech="spring-boot">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/960px-Spring_Boot.svg.png" 
-                                            alt="Spring Boot"
-                                        />
+                                    <div class="tool-card" data-tool="rider">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JetBrains_Rider_Icon.svg/1280px-JetBrains_Rider_Icon.svg.png" 
+                                                alt="Rider" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="rider">Rider</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="spring-boot">Spring Boot</h4>
-                                </div>
 
-                                <div class="skill-card" data-tech="dotnet">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://user-images.githubusercontent.com/42860908/106164530-120e5680-61b0-11eb-954c-969c7031ffd4.png" 
-                                            alt="DotNet"
-                                        />
+                                    <div class="tool-card" data-tool="data-grip">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/DataGrip.svg/1280px-DataGrip.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" 
+                                                alt="DataGrip" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="data-grip">DataGrip</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="dotnet">.Net</h4>
-                                </div>
 
-                                <div class="skill-card" data-tech="nodejs">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-icon-svg-download-png-1174935.png" 
-                                            alt="Node Js"
-                                        />
+                                    <div class="tool-card" data-tool="android-studio">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/android-studio-icon.png" 
+                                                alt="Android Studio" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="android-studio">Android Studio</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="nodejs">Node.js</h4>
-                                </div>
 
-                                <div class="skill-card" data-tech="react">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" 
-                                            alt="React"
-                                        />
+                                    <div class="tool-card" data-tool="antigravity">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://avatars.githubusercontent.com/u/242056456?s=200&v=4" 
+                                                alt="Antigravity" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="antigravity">Antigravity</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="react">React</h4>
-                                </div>
 
-                                <div class="skill-card" data-tech="vite">
-                                    <div class="skill-icon">
-                                        <img 
-                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/500px-Vitejs-logo.svg.png" 
-                                            alt="Vite"
-                                        />
+                                    <div class="tool-card" data-tool="vs-code">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png" 
+                                                alt="VS Code" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="vs-code">VS Code</span>
                                     </div>
-                                    <h4 class="skill-name" data-key="vite">Vite</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <br>
 
-                    <div class="category reveal">
-                        <h3 class="category-title" data-key="tools-technologies">Ferramentas & Tecnologias</h3>
-                        <div class="skills-grid compact">
-                            <div class="tool-card" data-tool="git">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/3840px-Git_icon.svg.png" 
-                                        alt="Git"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="git">Git</span>
-                            </div>
-                            
-                            <div class="tool-card" data-tool="github">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
-                                        alt="GitHub"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="github">GitHub</span>
-                            </div>
+                                    <div class="tool-card" data-tool="visual-studio">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/250px-Visual_Studio_Icon_2022.svg.png" 
+                                                alt="Visual Studio" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="visual-studio">Visual Studio</span>
+                                    </div>
 
-                            <div class="tool-card" data-tool="gitlab">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" 
-                                        alt="GitLab"
-                                    />
+                                    <div class="tool-card" data-tool="ssms">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://datamodel.com/wp-content/uploads/2025/05/ssms_21.png" 
+                                                alt="SSMS"
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="ssms">SSMS</span>
+                                    </div>
+
+                                    <div class="tool-card" data-tool="pgadmin4">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" 
+                                                alt="PGAdmin4" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="pgadmin4">PGAdmin4</span>
+                                    </div>
                                 </div>
-                                <span class="tool-name" data-key="gitlab">GitLab</span>
                             </div>
 
-                            <div class="tool-card" data-tool="subversion">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://cdn.iconscout.com/icon/free/png-256/free-subversion-logo-icon-svg-download-png-2945192.png" 
-                                        alt="Subversion"
-                                    />
+                            <!-- Versionamento e Colaborações -->
+                            <div class="subcategory">
+                                <h4 class="subcategory-title">
+                                    <i class="fas fa-code-branch"></i> 
+                                    <span data-key="version-control-title">Versionamento e Colaborações</span>
+                                </h4>
+                                <div class="skills-grid compact">
+                                    <div class="tool-card" data-tool="git">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/3840px-Git_icon.svg.png" 
+                                                alt="Git" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="git">Git</span>
+                                    </div>
+
+                                    <div class="tool-card" data-tool="github">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
+                                                alt="GitHub" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="github">GitHub</span>
+                                    </div>
+
+                                    <div class="tool-card" data-tool="gitlab">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" 
+                                                alt="GitLab" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="gitlab">GitLab</span>
+                                    </div>
+
+                                    <div class="tool-card" data-tool="subversion">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://cdn.iconscout.com/icon/free/png-256/free-subversion-logo-icon-svg-download-png-2945192.png" 
+                                                alt="Subversion" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="subversion">Subversion</span>
+                                    </div>
+
+                                    <div class="tool-card" data-tool="tortoisesvn">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://tortoisesvn.net/assets/img/logo-256x256.png" 
+                                                alt="TortoiseSVN" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="tortoisesvn">TortoiseSVN</span>
+                                    </div>
                                 </div>
-                                <span class="tool-name" data-key="subversion">Subversion</span>
                             </div>
 
-                            <div class="tool-card" data-tool="tortoisesvn">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://tortoisesvn.net/assets/img/logo-256x256.png" 
-                                        alt="TortoiseSVN"
-                                    />
+                            <!-- Office -->
+                            <div class="subcategory">
+                                <h4 class="subcategory-title">
+                                    <i class="fas fa-file-alt"></i> 
+                                    <span data-key="office-title">Office</span>
+                                </h4>
+                                <div class="skills-grid compact">
+                                    <div class="tool-card" data-tool="word">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Microsoft_Office_Word_%282025%E2%80%93present%29.svg/960px-Microsoft_Office_Word_%282025%E2%80%93present%29.svg.png" 
+                                                alt="Word" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="word">Word</span>
+                                    </div>
+
+                                    <div class="tool-card" data-tool="power-point">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg/960px-Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg.png" 
+                                                alt="PowerPoint" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="power-point">PowerPoint</span>
+                                    </div>
+
+                                    <div class="tool-card" data-tool="excel">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://images.icon-icons.com/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png" 
+                                                alt="Excel" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="excel">Excel</span>
+                                    </div>
+
+                                    <div class="tool-card" data-tool="power-bi">
+                                        <div class="tool-icon">
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/960px-New_Power_BI_Logo.svg.png?_=20210102182532" 
+                                                alt="Power BI" 
+                                            />
+                                        </div>
+                                        <span class="tool-name" data-key="power-bi">Power BI</span>
+                                    </div>
                                 </div>
-                                <span class="tool-name" data-key="tortoisesvn">TortoiseSVN</span>
                             </div>
 
-                            <div class="tool-card" data-tool="pgadmin4">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" 
-                                        alt="PGAdmin4"
-                                    />
+                            <!-- Sistemas Operacionais -->
+                            <div class="subcategory">
+                                <h4 class="subcategory-title">
+                                    <i class="fas fa-desktop"></i> 
+                                    <span data-key="operating-systems">Sistemas Operacionais</span>
+                                </h4>
+                                <div class="skills-grid compact">
+                                    <div class="tool-card" data-tool="windows">
+                                        <div class="tool-icon">
+                                            <i class="fab fa-windows" style="font-size: 3rem; color: #0078D6;"></i>
+                                        </div>
+                                        <span class="tool-name" data-key="windows">Windows</span>
+                                    </div>
                                 </div>
-                                <span class="tool-name" data-key="pgadmin4">PGAdmin4</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="jet-brains">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://img.icons8.com/color/600/jetbrains.png" 
-                                        alt="JetBrains"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="jet-brains">JetBrains</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="pycharm">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/JetBrains_PyCharm_Product_Icon.svg/3840px-JetBrains_PyCharm_Product_Icon.svg.png" 
-                                        alt="PyCharm"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="pycharm">PyCharm</span>
-                            </div>
-                            
-                            <div class="tool-card" data-tool="intellij">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/960px-IntelliJ_IDEA_Icon.svg.png" 
-                                        alt="IntelliJ"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="intellij">IntelliJ</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="rubymine">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/RubyMine_Icon.svg/960px-RubyMine_Icon.svg.png" 
-                                        alt="RubyMine"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="rubymine">RubyMine</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="rider">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JetBrains_Rider_Icon.svg/1280px-JetBrains_Rider_Icon.svg.png" 
-                                        alt="Rider"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="rider">Rider</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="windows">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://img.icons8.com/color/512/windows-10.png" 
-                                        alt="Windows"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="windows">Windows</span>
-                            </div>
-
-
-                            <div class="tool-card" data-tool="ssms">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://datamodel.com/wp-content/uploads/2025/05/ssms_21.png" 
-                                        alt="SSMS"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="ssms">SSMS</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="vs-code">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png" 
-                                        alt="VS Code"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="vs-code">VS Code</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="visual-studio">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/250px-Visual_Studio_Icon_2022.svg.png" 
-                                        alt="Visual Studio"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="visual-studio">Visual Studio</span>
-                            </div>
-                            
-                            <div class="tool-card" data-tool="power-bi">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/960px-New_Power_BI_Logo.svg.png?_=20210102182532" 
-                                        alt="Power BI"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="power-bi">Power BI</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="word">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Microsoft_Office_Word_%282025%E2%80%93present%29.svg/960px-Microsoft_Office_Word_%282025%E2%80%93present%29.svg.png" 
-                                        alt="Word"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="word">Word</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="power-point">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg/960px-Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg.png" 
-                                        alt="Power Point"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="power-point">Power Point</span>
-                            </div>
-
-                            <div class="tool-card" data-tool="excel">
-                                <div class="tool-icon">
-                                    <img 
-                                        src="https://images.icon-icons.com/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png" 
-                                        alt="Excel"
-                                    />
-                                </div>
-                                <span class="tool-name" data-key="excel">Excel</span>
                             </div>
                         </div>
                     </div>
@@ -760,25 +889,30 @@
                                 <span class="project-status status-concluido" data-key="status-concluido">Concluído</span>
                                 <span class="project-type" data-key="type-personal">Projeto pessoal</span>
                             </div>
+
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fa-solid fa-building-user"></i>
                                 </div>
                                 <h3 class="project-title" data-key="java-project-title">SGC</h3>
                             </div>
+
                             <p class="project-description" data-key="java-project-desc">
                                 Sistema de gestão condominial para administração de moradores, unidades, solicitações e informações do condomínio.
                             </p>
+
                             <div class="project-tech">
                                 <span class="tech-tag">React</span>
                                 <span class="tech-tag">Spring</span>
                                 <span class="tech-tag">SqlServer</span>
                             </div>
+
                             <div class="project-actions">
                                 <button type="button" class="project-details-btn" data-project="sgc" aria-haspopup="dialog">
                                     <i class="fas fa-circle-info" aria-hidden="true"></i>
                                     <span data-key="learn-more">Saiba mais</span>
                                 </button>
+
                                 <a href="https://github.com/devlucasaf/SGC-Sistema-de-Gestao-De-Condominio" target="_blank" rel="noopener noreferrer" class="project-code-link" aria-label="Ver código no GitHub">
                                     <i class="fab fa-github" aria-hidden="true"></i>
                                     <span data-key="view-code">Ver código</span>
@@ -792,20 +926,24 @@
                                 <span class="project-status status-concluido" data-key="status-concluido">Concluído</span>
                                 <span class="project-type" data-key="type-personal">Projeto pessoal</span>
                             </div>
+
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fa-regular fa-futbol"></i>
                                 </div>
                                 <h3 class="project-title" data-key="soccer-project-title">Football Games 11</h3>
                             </div>
+
                             <p class="project-description" data-key="soccer-project-desc">
                                 Plataforma de minijogos de futebol com interações e mecânicas executadas diretamente no navegador.
                             </p>
+
                             <div class="project-tech">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
                                 <span class="tech-tag">JavaScript</span>
                             </div>
+
                             <div class="project-actions">
                                 <button type="button" class="project-details-btn" data-project="football-games-11" aria-haspopup="dialog">
                                     <i class="fas fa-circle-info" aria-hidden="true"></i>
@@ -824,25 +962,30 @@
                                 <span class="project-status status-concluido" data-key="status-concluido">Concluído</span>
                                 <span class="project-type" data-key="type-professional">Projeto profissional</span>
                             </div>
+
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fa-solid fa-paintbrush"></i>
                                 </div>
                                 <h3 class="project-title" data-key="naka-tattos-project-title">Naka Tattos</h3>
                             </div>
+
                             <p class="project-description" data-key="naka-tattos-project-desc">
                                 Site profissional do tatuador Naka Tattos, com portfólio, contato e agendamento.
                             </p>
+
                             <div class="project-tech">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>
                                 <span class="tech-tag">JavaScript</span>
                             </div>
+
                             <div class="project-actions">
                                 <button type="button" class="project-details-btn" data-project="naka-tattos" aria-haspopup="dialog">
                                     <i class="fas fa-circle-info" aria-hidden="true"></i>
                                     <span data-key="learn-more">Saiba mais</span>
                                 </button>
+
                                 <a href="https://github.com/devlucasaf/naka-tattos" target="_blank" rel="noopener noreferrer" class="project-code-link" aria-label="Ver código no GitHub">
                                     <i class="fab fa-github" aria-hidden="true"></i>
                                     <span data-key="view-code">Ver código</span>
@@ -856,25 +999,30 @@
                                 <span class="project-status status-concluido" data-key="status-concluido">Concluído</span>
                                 <span class="project-type" data-key="type-personal">Projeto pessoal</span>
                             </div>
+
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fa-solid fa-piggy-bank"></i>
                                 </div>
                                 <h3 class="project-title" data-key="money-tracker-project-title">Money Tracker Control</h3>
                             </div>
+
                             <p class="project-description" data-key="money-tracker-project-desc">
                                 Aplicação de finanças pessoais para registrar receitas, despesas e organizar o orçamento.
                             </p>
+
                             <div class="project-tech">
                                 <span class="tech-tag">JavaScript</span>
                                 <span class="tech-tag">Spring</span>
                                 <span class="tech-tag">SqlServer</span>
                             </div>
+
                             <div class="project-actions">
                                 <button type="button" class="project-details-btn" data-project="money-tracker-control" aria-haspopup="dialog">
                                     <i class="fas fa-circle-info" aria-hidden="true"></i>
                                     <span data-key="learn-more">Saiba mais</span>
                                 </button>
+
                                 <a href="https://github.com/devlucasaf/money-tracker-control" target="_blank" rel="noopener noreferrer" class="project-code-link" aria-label="Ver código no GitHub">
                                     <i class="fab fa-github" aria-hidden="true"></i>
                                     <span data-key="view-code">Ver código</span>
@@ -888,25 +1036,30 @@
                                 <span class="project-status status-em-desenvolvimento" data-key="status-em-desenvolvimento">Em desenvolvimento</span>
                                 <span class="project-type" data-key="type-academic">Projeto acadêmico</span>
                             </div>
+
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fas fa-school" aria-hidden="true"></i>
                                 </div>
                                 <h3 class="project-title" data-key="academico-project-title">ERP Academic</h3>
                             </div>
+
                             <p class="project-description" data-key="academico-project-desc">
                                 Sistema acadêmico para gerenciar alunos, professores, turmas, disciplinas e matrículas.
                             </p>
+
                             <div class="project-tech">
                                 <span class="tech-tag">Spring</span>
                                 <span class="tech-tag">SQL Server</span>
                                 <span class="tech-tag">JavaScript</span>
                             </div>
+
                             <div class="project-actions">
                                 <button type="button" class="project-details-btn" data-project="erp-academic" aria-haspopup="dialog">
                                     <i class="fas fa-circle-info" aria-hidden="true"></i>
                                     <span data-key="learn-more">Saiba mais</span>
                                 </button>
+
                                 <a href="https://github.com/devlucasaf/ERP-Academic-School-System" target="_blank" rel="noopener noreferrer" class="project-code-link" aria-label="Ver código no GitHub">
                                     <i class="fab fa-github" aria-hidden="true"></i>
                                     <span data-key="view-code">Ver código</span>
@@ -920,25 +1073,30 @@
                                 <span class="project-status status-em-desenvolvimento" data-key="status-em-desenvolvimento">Em desenvolvimento</span>
                                 <span class="project-type" data-key="type-personal">Projeto pessoal</span>
                             </div>
+
                             <div class="project-header">
                                 <div class="project-icon">
                                     <i class="fas fa-ticket"></i>
                                 </div>
                                 <h3 class="project-title" data-key="liveevents-project-title">LiveEvents-Ticket</h3>
                             </div>
+
                             <p class="project-description" data-key="liveevents-project-desc">
                                 Sistema de gerenciamento de eventos e venda de ingressos online.
                             </p>
+
                             <div class="project-tech">
                                 <span class="tech-tag">.NET</span>
                                 <span class="tech-tag">React</span>
                                 <span class="tech-tag">SqlServer</span>
                             </div>
+
                             <div class="project-actions">
                                 <button type="button" class="project-details-btn" data-project="liveevents-ticket" aria-haspopup="dialog">
                                     <i class="fas fa-circle-info" aria-hidden="true"></i>
                                     <span data-key="learn-more">Saiba mais</span>
                                 </button>
+
                                 <a href="https://github.com/devlucasaf/LiveEvents-Ticket" target="_blank" rel="noopener noreferrer" class="project-code-link" aria-label="Ver código no GitHub">
                                     <i class="fab fa-github" aria-hidden="true"></i>
                                     <span data-key="view-code">Ver código</span>
@@ -1057,17 +1215,22 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer-content">
+                    <div class="footer-divider">
+                        <span class="divider-line"></span>
+                        <span class="divider-icon">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        <span class="divider-line"></span>
+                    </div>
                     <div class="footer-brand">
                         <span class="logo">L</span>
-                        <span class="logo-text">Lucas</span>
+                        <span class="logo-text">LUCAS</span>
                     </div>
-
                     <p class="footer-text" data-key="footer-text">
                         Desenvolvido com HTML, CSS e JavaScript e muito código
                     </p>
-                    
                     <p class="copyright" data-key="copyright">
-                        © 2025 Lucas. Todos os direitos reservados.
+                        &copy; 2026 LUCAS. TODOS OS DIREITOS RESERVADOS.
                     </p>
                 </div>
             </div>
@@ -1082,6 +1245,7 @@
                         <i class="fas fa-times" aria-hidden="true"></i>
                     </button>
                 </div>
+
                 <div class="modal-body">
                     <div class="modal-image-wrapper" id="modal-image-wrapper" hidden></div>
                     <p id="modal-description" class="modal-description"></p>
@@ -1089,18 +1253,22 @@
                         <span class="modal-status" id="modal-status"></span>
                         <span class="modal-type" id="modal-type"></span>
                     </div>
+
                     <div class="modal-section">
                         <h3 data-key="features-title">Principais funcionalidades</h3>
                         <ul id="modal-features" class="modal-features"></ul>
                     </div>
+
                     <div class="modal-section">
                         <h3 data-key="participation-title">Minha participação</h3>
                         <p id="modal-participation"></p>
                     </div>
+
                     <div class="modal-section">
                         <h3 data-key="challenges-title">Desafios técnicos</h3>
                         <p id="modal-challenges"></p>
                     </div>
+
                     <div class="modal-section">
                         <h3 data-key="tech-used-title">Tecnologias utilizadas</h3>
                         <div id="modal-tech" class="modal-tech"></div>
@@ -1112,6 +1280,7 @@
                         <i class="fab fa-github" aria-hidden="true"></i> 
                         <span data-key="view-code">Ver código</span>
                     </a>
+
                     <a id="modal-demo-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" hidden>
                         <i class="fas fa-external-link-alt" aria-hidden="true"></i> 
                         <span data-key="view-demo">Ver demonstração</span>
