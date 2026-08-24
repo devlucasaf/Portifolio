@@ -3436,3 +3436,65 @@ body {
         display: none; 
     }
 }
+
+/* --- PÁGINA DE LICENÇA --- */
+.license-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+}
+
+.license-card {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: var(--border-radius-xl);
+    padding: 3rem;
+    border: 2px solid var(--roxo-escuro);
+    box-shadow: var(--shadow-neon);
+}
+
+.license-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.license-header .license-icon {
+    font-size: 3rem;
+    color: var(--roxo-neon);
+}
+
+.license-header .section-title {
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.license-body {
+    background: var(--preto-fumaca);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    border-left: 5px solid var(--roxo-neon);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.license-footer-actions {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+/* Footer específico da licença */
+.license-footer {
+    margin-top: 0;
+    border-top: none;
+}
