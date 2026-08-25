@@ -686,3 +686,53 @@ function configurarBotoesProjetos() {
         });
     });
 }
+
+function toggleTheme() {
+    const body = document.body;
+    const isLight = body.classList.contains('light-theme');
+    const newTheme = isLight ? 'dark' : 'light';
+    
+    body.classList.toggle('light-theme');
+    
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+        const icon = btn.querySelector('i');
+        if (newTheme === 'light') {
+            icon.className = 'fas fa-sun';
+        } else {
+            icon.className = 'fas fa-moon';
+        }
+    }
+    
+    localStorage.setItem('theme', newTheme);
+}
+
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    const btn = document.getElementById('theme-toggle');
+    
+    if (savedTheme === 'light') {
+        body.classList.add('light-theme');
+        if (btn) {
+            const icon = btn.querySelector('i');
+            icon.className = 'fas fa-sun';
+        }
+    } else {
+        body.classList.remove('light-theme');
+        if (btn) {
+            const icon = btn.querySelector('i');
+            icon.className = 'fas fa-moon';
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Carrega o tema salvo
+    loadTheme();
+});

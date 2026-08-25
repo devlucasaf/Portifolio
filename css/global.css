@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Tema escuro --- */
+:root {
+    --roxo-imperador: #7B2CBF;
+    --roxo-profundo: #5A189A;
+    --roxo-escuro: #3C096C;
+    --roxo-neon: #9D4EDD;
+    --roxo-claro: #C77DFF;
+    --roxo-suave: #E0AAFF;
+    
+    --preto-puro: #000000;
+    --preto-carvão: #121212;
+    --preto-fumaca: #1A1A1A;
+    --branco-puro: #FFFFFF;
+    --branco-fumaca: #F8F9FA;
+    --cinza-metal: #2D2D2D;
+    
+    --azul-elétrico: #4361EE;
+    --azul-profundo: #3A0CA3;
+    --vermelho-sangue: #FF005C;
+    --vermelho-escuro: #D00000;
+    
+    --gradiente-roxo: linear-gradient(135deg, var(--roxo-profundo), var(--roxo-neon));
+    --gradiente-roxo-preto: linear-gradient(135deg, var(--preto-puro), var(--roxo-imperador));
+    --gradiente-neon: linear-gradient(135deg, var(--roxo-neon), var(--vermelho-sangue));
+    --gradiente-azul-roxo: linear-gradient(135deg, var(--azul-profundo), var(--roxo-imperador));
+    
+    --bg-color: var(--preto-carvão);
+    --bg-secondary: var(--preto-fumaca);
+    --bg-tertiary: var(--cinza-metal);
+    --text-color: var(--branco-fumaca);
+    --text-light: var(--roxo-suave);
+    --card-bg: var(--preto-fumaca);
+    --border-color: var(--roxo-escuro);
+    --shadow: 0 10px 30px rgba(123, 44, 191, 0.15);
+    --shadow-hover: 0 20px 40px rgba(123, 44, 191, 0.3);
+    --shadow-neon: 0 0 20px rgba(157, 78, 221, 0.5);
+    
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 30px;
+    
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* --- Tema claro --- */
+body.light-theme {
+    --roxo-imperador: #8B5CF6;
+    --roxo-profundo: #7C3AED;
+    --roxo-escuro: #A78BFA;
+    --roxo-neon: #8B5CF6;
+    --roxo-claro: #C4B5FD;
+    --roxo-suave: #DDD6FE;
+    
+    --preto-puro: #FFFFFF;
+    --preto-carvão: #F3F4F6;
+    --preto-fumaca: #E5E7EB;
+    --branco-puro: #111827;         
+    --branco-fumaca: #1F2937;
+    --cinza-metal: #D1D5DB;
+    
+    --azul-elétrico: #3B82F6;
+    --azul-profundo: #1D4ED8;
+    --vermelho-sangue: #EF4444;
+    --vermelho-escuro: #DC2626;
+    
+    --gradiente-roxo: linear-gradient(135deg, var(--roxo-profundo), var(--roxo-neon));
+    --gradiente-roxo-preto: linear-gradient(135deg, var(--preto-puro), var(--roxo-imperador));
+    --gradiente-neon: linear-gradient(135deg, var(--roxo-neon), var(--vermelho-sangue));
+    --gradiente-azul-roxo: linear-gradient(135deg, var(--azul-profundo), var(--roxo-imperador));
+    
+    --bg-color: var(--preto-carvão);
+    --bg-secondary: var(--preto-fumaca);
+    --bg-tertiary: var(--cinza-metal);
+    --text-color: var(--branco-puro);
+    --text-light: #1F2937;
+    --card-bg: #FFFFFF;
+    --border-color: var(--roxo-claro);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --shadow-neon: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+/* --- Estilos base --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--roxo-neon);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--roxo-neon);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    mix-blend-mode: difference;
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0.7;
+}
+
+/* --- Utilitários globais --- */
+.reveal {
+    opacity: 0;
+    translate: 0 40px;
+    transition: opacity 0.7s ease, translate 0.7s ease;
+    will-change: opacity, translate;
+}
+
+.reveal.visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: var(--gradiente-roxo);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow);
+    z-index: 900;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-neon);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--roxo-suave);
+    outline-offset: 3px;
+}
+
+/* --- Fundo animado --- */
+.background-animated {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #0a0a0a, #1a0a2e, #2d1b4e, #0a0a0a);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    transition: background var(--transition-normal);
+}
+
+body.light-theme .bg-gradient {
+    background: linear-gradient(135deg, #e0e7ff, #f3e8ff, #e0e7ff);
+    animation: none;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    25% {
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.bg-particles {
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(157, 78, 221, 0.15);
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.1);
+    border: 1px solid rgba(157, 78, 221, 0.1);
+    will-change: transform;
+    transition: transform 0.1s linear;
+    animation: float 8s ease-in-out infinite alternate;
+}
+
+body.light-theme .particle {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.15);
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, -30px) scale(1.05);
+    }
+}
+
+/* Tamanhos das partículas */
+.particle:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 5%;
+}
+
+.particle:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    top: 70%;
+    left: 80%;
+}
+
+.particle:nth-child(3) {
+    width: 200px;
+    height: 200px;
+    top: 40%;
+    left: 20%;
+}
+
+.particle:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    top: 85%;
+    left: 10%;
+}
+
+.particle:nth-child(5) {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    left: 75%;
+}
+
+.particle:nth-child(6) {
+    width: 100px;
+    height: 100px;
+    top: 55%;
+    left: 55%;
+}
+
+.particle:nth-child(7) {
+    width: 70px;
+    height: 70px;
+    top: 5%;
+    left: 90%;
+}
+
+.particle:nth-child(8) {
+    width: 180px;
+    height: 180px;
+    top: 75%;
+    left: 30%;
+}
+
+/* --- Animações principais --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes scroll {
+    0% { 
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+
+    100% { 
+        transform: translateY(20px); 
+        opacity: 0; 
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: var(--shadow-neon),
+                    0 0 0 15px rgba(123, 44, 191, 0.1),
+                    0 0 0 30px rgba(123, 44, 191, 0.05);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(157, 78, 221, 0.8),
+                    0 0 0 25px rgba(123, 44, 191, 0.2),
+                    0 0 0 50px rgba(123, 44, 191, 0.1);
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+@keyframes typeWriter {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes brilhoCard {
+    100% {
+        left: 125%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseIcon {
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes aparecerProjeto {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --- Redução de movimento --- */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
+
+    .bg-gradient {
+        animation: none;
+    }
+
+    .particle {
+        animation: none;
+        display: none;
+    }
+
+    .divider-icon {
+        animation: none;
+    }
+
+    .skill-card:hover::after,
+    .tool-card:hover::after,
+    .project-card:hover::after {
+        animation: none;
+    }
+
+    .project-card.filter-enter {
+        animation: none;
+    }
+
+    .modal-content {
+        transform: scale(1);
+        transition: none;
+    }
+
+    .modal {
+        transition: none;
+    }
+}
